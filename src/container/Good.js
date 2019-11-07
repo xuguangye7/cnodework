@@ -33,18 +33,16 @@ export default class Good extends Component {
             <div>
                 {
                     this.state.a.map((item)=>{
-                        if(item.tab == 'good'){
-                            return(
-                                <ul>
-                                    <li style={{width:900,height: 30,float:"left",overflow:"hidden"}}>
-                                        <img src={item.author.avatar_url} style={{width:'30px',height:'30px',float:'left'}}></img>    
-                                        <p className='one'>{item.reply_count}/{item.visit_count}</p>
-                                        <button>{item.tab}</button>
-                                        <Link className='two' to={'/topics/'+item.id}>{item.title}</Link>
-                                    </li>
-                                </ul>
-                            )   
-                        }  
+                        return(
+                            <ul>
+                                <li style={{width:900,height: 30,float:"left",overflow:"hidden"}}>
+                                    <img src={item.author.avatar_url} style={{width:'30px',height:'30px',float:'left'}}></img>    
+                                    <p className='one'>{item.reply_count}/{item.visit_count}</p>
+                                    <button>{item.tab}</button>
+                                    <Link className='two' to={'/topics/'+item.id}>{item.title}</Link>
+                                </li>
+                            </ul>
+                        )     
                     })
                 }
                 <button onClick={(e)=>this.onChange(e)} className='page'>1</button>
